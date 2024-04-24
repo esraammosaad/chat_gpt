@@ -22,7 +22,7 @@ class TextCompletionWidget extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                textData.text,
+                                textData.message['content'],
                                 style: const TextStyle(fontSize: 18),
                               ),
                               const SizedBox(
@@ -34,13 +34,13 @@ class TextCompletionWidget extends StatelessWidget {
                                 children: [
                                   InkWell(
                                       onTap: () {
-                                        Share.share(textData.text);
+                                        Share.share(textData.message['content']);
                                       },
                                       child: const Icon(Icons.share, size: 35)),
                                   InkWell(
                                       onTap: () {
                                         Clipboard.setData(
-                                            ClipboardData(text: textData.text));
+                                            ClipboardData(text: textData.message['content']));
                                       },
                                       child: const Icon(
                                         Icons.copy,

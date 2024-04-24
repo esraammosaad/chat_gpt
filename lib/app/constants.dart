@@ -7,7 +7,7 @@ class Constants {
   static const String endPointImage = "/images/generations";
   static const String endPointText= "/completions";
   static const int apiTimeOut = 60000;
-  static const String OPEN_AI_KEY="sk-proj-dii0FnZFiJfmfUgUQxQmT3BlbkFJ6ZCP6lXtg1fB1kLeq2n8";
+  static const String OPEN_AI_KEY="";
   static const String empty = "";
   static const int zero = 0;
 

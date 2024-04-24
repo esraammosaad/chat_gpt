@@ -22,14 +22,17 @@ class _AppServiceClient implements AppServiceClient {
 
   @override
   Future<ImageDataResponse> getGenerateImages(
+      model,
     prompt,
     number,
     size,
+
   ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = {
+      'model':model,
       'prompt': prompt,
       'n': number,
       'size': size,
@@ -63,8 +66,10 @@ class _AppServiceClient implements AppServiceClient {
     final _headers = <String, dynamic>{};
     final _data = {
       'model': model,
-      'max_tokens': maxTokens,
-      'prompt': promptText,
+      'temperature': 0.7,
+      'messages': [{
+        "role": "user", "content": promptText
+      }],
     };
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<TextCompletionResponse>(Options(
@@ -74,7 +79,7 @@ class _AppServiceClient implements AppServiceClient {
     )
             .compose(
               _dio.options,
-              '/completions',
+              '/chat/completions',
               queryParameters: queryParameters,
               data: _data,
             )

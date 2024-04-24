@@ -6,16 +6,16 @@ part 'responses.g.dart';
 
 @JsonSerializable()
 class ChoicesTextCompletionResponse {
-  @JsonKey(name: 'text')
-  String? text;
   @JsonKey(name: 'index')
   num? index;
+  @JsonKey(name: 'message')
+  Map? message;
   @JsonKey(name: 'finish_reason')
   String? finishReason;
 
   ChoicesTextCompletionResponse(
-    this.text,
     this.index,
+    this.message,
     this.finishReason,
   );
 

@@ -12,7 +12,7 @@ class ImageRemoteDataSourceImpl implements ImageRemoteDataSource {
 
   @override
   Future<ImageDataResponse> getGenerateImages(String query) async {
-    return await _appServiceClient.getGenerateImages(query, 10, '256x256',);
+    return await _appServiceClient.getGenerateImages("dall-e-3",query, 1, "1024x1024",);
   }
 }
 

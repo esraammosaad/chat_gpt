@@ -8,7 +8,7 @@ extension ChoicesTextCompletionResponseMapper
     on ChoicesTextCompletionResponse? {
   ChoicesTextCompletionModel toDomain() {
     return ChoicesTextCompletionModel(
-      this?.text.orEmpty() ?? Constants.empty,
+      this?.message??{},
       this?.index.orZero() ?? Constants.zero,
       this?.finishReason.orEmpty() ?? Constants.empty,
     );

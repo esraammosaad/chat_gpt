@@ -13,7 +13,7 @@ class TextCompletionRemoteDataSourceImpl implements TextCompletionRemoteDataSour
   @override
   Future<TextCompletionResponse> getTextCompletion(String query) async {
     return await _appServiceClient.getTextCompletion(
-      "text-ada-001",
+      "gpt-3.5-turbo-0125",
        1000,
       query,
     );

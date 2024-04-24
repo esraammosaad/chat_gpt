@@ -9,15 +9,15 @@ part of 'responses.dart';
 ChoicesTextCompletionResponse _$ChoicesTextCompletionResponseFromJson(
         Map<String, dynamic> json) =>
     ChoicesTextCompletionResponse(
-      json['text'] as String?,
       json['index'] as num?,
+      json['message'] as Map?,
       json['finish_reason'] as String?,
     );
 
 Map<String, dynamic> _$ChoicesTextCompletionResponseToJson(
         ChoicesTextCompletionResponse instance) =>
     <String, dynamic>{
-      'text': instance.text,
+      'message': instance.message,
       'index': instance.index,
       'finish_reason': instance.finishReason,
     };

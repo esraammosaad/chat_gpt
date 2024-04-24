@@ -1,10 +1,10 @@
 class ChoicesTextCompletionModel {
-  String text;
+  Map message;
   num index;
   String finishReason;
 
   ChoicesTextCompletionModel(
-    this.text,
+    this.message,
     this.index,
     this.finishReason,
   );

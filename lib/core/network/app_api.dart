@@ -14,6 +14,7 @@ abstract class AppServiceClient {
 
   @POST(Constants.endPointImage)
   Future<ImageDataResponse> getGenerateImages(
+    @Field("model") String model,
     @Field("prompt") String prompt,
     @Field("n") int number,
     @Field("size") String size,
